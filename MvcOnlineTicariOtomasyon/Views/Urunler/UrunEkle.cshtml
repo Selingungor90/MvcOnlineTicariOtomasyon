@@ -1,0 +1,38 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Urunler
+
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Ürün Ekle</h2>
+<br />
+
+<form class="form-control" method="post">
+    @Html.LabelFor(x => x.Urunad)
+    @Html.TextBoxFor(x => x.Urunad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Marka)
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Stok)
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AlısFiyat)
+    @Html.TextBoxFor(x => x.SatisFiyatı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SatisFiyatı)
+    @Html.TextBoxFor(x => x.SatisFiyatı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel)
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Kategoriid)
+    @Html.DropDownListFor(x=>x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1, new { @class="form-control"})
+    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <br />
+    <button class="btn btn-success">Ürün Ekle</button>
+</form>

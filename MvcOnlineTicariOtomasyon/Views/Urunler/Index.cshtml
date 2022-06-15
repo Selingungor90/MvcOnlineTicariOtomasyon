@@ -1,0 +1,52 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ÜRÜN ID</th>
+        <th>ÜRÜN AD</th>
+        <th>ÜRÜN MARKA</th>
+        <th>ÜRÜN STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>DURUM</th>
+        <th>ÜRÜN GÖRSEL</th>
+        <th>KATEGORİ ID</th>
+        <th>İŞLEMLER</th>
+    </tr>
+
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.Urunid</td>
+            <td>@u.Urunad</td>
+            <td>@u.Marka</td>
+            <td>@u.Stok</td>
+            <td>@u.AlısFiyat</td>
+            <td>@u.SatisFiyatı</td>
+            <td>@u.Durum</td>
+            <td>@u.UrunGorsel</td>
+            <td>@u.Kategori.KategoriAd</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        ...
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/Urunler/UrunSil/@u.Urunid">Sil</a></li>
+                        <li><a class="dropdown-item" href="/Urunler/UrunGetir/@u.Urunid">Guncelle</a></li>
+                    </ul>
+                </div>
+
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Urunler/UrunEkle" class="btn btn-primary">Ürün Ekle</a>
+
