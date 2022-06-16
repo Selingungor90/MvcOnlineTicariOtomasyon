@@ -19,17 +19,30 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(6)]
         public String FaturaSıraNo{ get; set; }
+
         public DateTime Tarih{ get; set; }
+
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public String VergiDairesi{ get; set; }
-        public DateTime Saat{ get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string Saat{ get; set; }
+
+
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public String TeslimEden{ get; set; }
+
+
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public String TeslimAlan{ get; set; }
+
+
+        public decimal Toplam { get; set; }
+
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
 
 
